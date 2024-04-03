@@ -1,0 +1,7 @@
+{ "input_folder_path": "/home/workspace/practicedata", 
+ "output_folder_path": "/home/workspace/ingesteddata", 
+ "test_data_path": "/home/workspace/testdata", 
+ "output_model_path": "/home/workspace/practicemodels", 
+ "prod_deployment_path": "/home/workspace/production_deployment",
+"home_path": ".",
+"output_concatenated_dataframe": "/home/workspace/test_final.csv"}
