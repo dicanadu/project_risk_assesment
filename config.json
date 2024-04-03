@@ -1,7 +1,7 @@
-{ "input_folder_path": "/home/workspace/practicedata", 
- "output_folder_path": "/home/workspace/ingesteddata", 
- "test_data_path": "/home/workspace/testdata", 
- "output_model_path": "/home/workspace/practicemodels", 
- "prod_deployment_path": "/home/workspace/production_deployment",
+{ "input_folder_path": "./practicedata",
+ "output_folder_path": "./ingesteddata",
+ "test_data_path": "./testdata",
+ "output_model_path": "./practicemodels",
+ "prod_deployment_path": "./production_deployment",
 "home_path": ".",
-"output_concatenated_dataframe": "/home/workspace/test_final.csv"}
+"output_concatenated_dataframe": "final_data.csv"}

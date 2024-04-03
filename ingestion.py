@@ -5,13 +5,13 @@ import json
 from datetime import datetime
 import logging
 
-logging.basicConfig(level=logging.INFO, 
+logging.basicConfig(level=logging.INFO,
                    format='%(asctime)s - %(message)s')
 logger = logging.getLogger()
 
 #############Load config.json and get input and output paths
-with open('/home/workspace/config.json','r') as f:
-    config = json.load(f) 
+with open('./config.json','r') as f:
+    config = json.load(f)
 
 #home_path = config["home_path"]
 input_folder_path = config['input_folder_path']
@@ -28,18 +28,18 @@ def merge_multiple_dataframe():
         df = pd.concat([df,data])
     df = df.drop_duplicates()
     logger.info(f"Final shape is {df.shape}")
-    
+
     save_path = os.path.join(output_folder_path)
     os.makedirs(os.path.join(save_path), exist_ok=True)
     logger.info(f"Saving dataframe to {save_path}/{filename}")
     df.to_csv(os.path.join(save_path, filename))
-    
-   
+
+
     with open(os.path.join(save_path, 'ingestedata.txt'), 'w') as file:
         file.write(str(os.listdir(input_folder_path)))
-    
-    return df 
-    
+
+    return df
+
 #check for datasets, compile them together, and write to an output file
 
 if __name__ == '__main__':

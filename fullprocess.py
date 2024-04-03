@@ -13,15 +13,15 @@ import ast
 import joblib
 from sklearn.metrics import f1_score
 
-logging.basicConfig(level=logging.INFO, 
+logging.basicConfig(level=logging.INFO,
                    format='%(asctime)s - %(message)s')
 logger = logging.getLogger()
 logging.info('Getting config params and paths')
 
 ##################Getting paths and configuration
-with open('/home/workspace/config.json', 'r') as file:
+with open('./config.json', 'r') as file:
     config = json.load(file)
-    
+
 input_folder_path = config['input_folder_path']
 prod_deployment_path = config['prod_deployment_path']
 deployed_text_path = os.path.join(prod_deployment_path, 'ingestedata.txt')
@@ -36,10 +36,10 @@ logging.info('Reading deployed files')
 with open(deployed_text_path, 'r') as file:
     content = file.read()
     content = sorted(ast.literal_eval(content))
-    
+
 with open(deployed_score_path, 'r') as file:
     score = float(file.read())
-    
+
 ############## Define model drift function
 def checking_model_drift():
     model = joblib.load(deployed_model_path)
@@ -77,8 +77,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-

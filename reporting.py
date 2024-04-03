@@ -10,16 +10,16 @@ import os
 from diagnostics import model_predictions
 import logging
 
-logging.basicConfig(level=logging.INFO, 
+logging.basicConfig(level=logging.INFO,
                    format='%(asctime)s - %(message)s')
 logger = logging.getLogger()
 
 
 ###############Load config.json and get path variables
-with open('/home/workspace/config.json','r') as f:
-    config = json.load(f) 
+with open('./config.json','r') as f:
+    config = json.load(f)
 
-test_data_path = os.path.join(config['test_data_path']) 
+test_data_path = os.path.join(config['test_data_path'])
 output_model_path = os.path.join(config['output_model_path'])
 
 ##############Function for reporting
